@@ -1,4 +1,6 @@
-import { ComponentChildren, h } from "../deps.ts";
+import { Head } from "$fresh/runtime.ts";
+import type { ComponentChildren } from "preact";
+
 
 interface LayoutProps {
   title: string;
@@ -7,16 +9,16 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   return (
-    <html lang="en">
-      <head>
+    <>
+      <Head>
         <meta charSet="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{props.title}</title>
-      </head>
+      </Head>
       <body>
         {props.children}
       </body>
-    </html>
+    </>
   );
 }
